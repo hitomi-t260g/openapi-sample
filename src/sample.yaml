@@ -39,12 +39,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ApiError'
 components:
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: X-API-KEY
-      description: API key for authentication with micro-CMS
   schemas:
     ApiError:
       type: object
