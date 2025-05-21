@@ -41,20 +41,3 @@ paths:
                     body:
                       type: string
                       description: Post content
-
-        '400':
-          description: Invalid parameters
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ApiError'
-components:
-  schemas:
-    ApiError:
-      type: object
-      properties:
-        message:
-          type: string
-          description: Error message
-      required:
-        - message
