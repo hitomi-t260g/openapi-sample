@@ -12,26 +12,36 @@ paths:
       summary: List todos
       description: Returns a list of todos
       operationId: listTodos
+      parameters:
+        - name: userId
+          in: query
+          description: Filter posts by user ID
+          schema:
+            type: integer
+
       responses:
         '200':
           description: Successful operation
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  userId:
-                    type: integer
-                    description: id
-                  id:
-                    type: integer
-                    description: id
-                  title:
-                    type: string
-                    description: title
-                  body:
-                    type: string
-                    description: title
+                type: array
+                items:
+                  type: object
+                  properties:
+                    userId:
+                      type: integer
+                      description: ID of the user who created the post
+                    id:
+                      type: integer
+                      description: Post ID
+                    title:
+                      type: string
+                      description: Post title
+                    body:
+                      type: string
+                      description: Post content
+
         '400':
           description: Invalid parameters
           content:
