@@ -1,0 +1,56 @@
+openapi: 3.0.3
+info:
+  title: Sample API
+  description: Sample API
+  version: 1.0.0
+servers:
+  - url: https://jsonplaceholder.typicode.com/
+    description: Json Placeholder API server
+paths:
+  /posts:
+    get:
+      summary: List todos
+      description: Returns a list of todos
+      operationId: listTodos
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  userId:
+                    type: integer
+                    description: id
+                  id:
+                    type: integer
+                    description: id
+                  title:
+                    type: string
+                    description: title
+                  body:
+                    type: string
+                    description: title
+        '400':
+          description: Invalid parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-KEY
+      description: API key for authentication with micro-CMS
+  schemas:
+    ApiError:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+      required:
+        - message

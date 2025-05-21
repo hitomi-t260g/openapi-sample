@@ -1,0 +1,14 @@
+{
+  "name": "openapi-sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.3",
+    "vite": "^6.3.5"
+  },
+  "private": true
+}
